@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FriTivi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #search-container {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #search-results {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .result-item {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+  </a></div>
+    <header>
+        <h>FriTivi</h>
+    </header>
+
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Wpisz nazwe kanału...">
+        <ul id="search-results"></ul>
+    </div>
+
+
+
+<p style="text-align: center;">✔️ = Officialne zródło.</p>
+<p style="text-align: center;">⚠️ = Reklamy pop-up.&nbsp;Proszę&nbsp;nie podawać żadnych swoich danych&nbsp;np. nr telefonu. To może być myląca reklama. Zalecany ad-blocker.</p>
+<p style="text-align: center;" class="">🟢 = Nie wymaga logowania.&nbsp;Nie potrzeba rejestracji aby oglądać.</p>
+<p style="text-align: center;" class="">⚫ = Wymaga logowania. Potrzeba rejestracji aby oglądać.</p>
+<p style="text-align: center;">‎ </p>
+<p style="text-align: center;">‎ </p>
+<p style="text-align: center;">‎ </p>
+<p style="text-align: center;">‎ </p>
+<p style="text-align: center;">Uwaga! Żaden z prezentowanych materiałów nie jest hostowany na serwerach FriTivi Nasz portal nie streamuje żadnego kanału. Nasz serwis udostępnia jedynie informacje o telewizjach. Wszelkie roszczenia prawne należy kierować po adresem serwisów publikujących zamieszczone materiały. FriTivi nie pobiera żadnych opłat za korzystanie z serwisu. Wszystkie reklamy pojawiające się na playerach telewizyjnych należą wyłącznie do właścicieli streamingu. Administracja serwisu nie ponosi odpowiedzialności za treści i komentarze publikowane przez użytkowników.</p>
+<p style="text-align: center;">‎ </p>
+<p style="text-align: center;">‎ </p>
+
+
+
+
+
+    <script>
+
+
+
+
+
+
+
+
+
+
+
+
+        // Sample data for demonstration purposes
+        const searchData = [
+<!-- .............................TVP1............................. -->
+
+            { title: 'TVP1 HD - Megogo', content: '🟢✔️', link: 'https://game-kidz.blogspot.com/2024/01/pingwiny-z-madagaskaru-i-hem.html?url=https://megogo.net/pl/tv/channels/21094446-tvp-1-online.html' },
+            { title: 'TVP1 - Pilot WP', content: '⚫✔️', link: 'https://game-kidz.blogspot.com/2024/01/pingwiny-z-madagaskaru-i-hem.html?url=https://pilot.wp.pl/program/tvp-1-hd/' },
+            { title: 'TVP1 - VOD', content: '⚫✔️', link: 'https://game-kidz.blogspot.com/2024/01/pingwiny-z-madagaskaru-i-hem.html?url=https://vod.tvp.pl/live,1/tvp-1,399697' },
+<!-- .............................TVP2............................. -->
+
+            { title: 'TVP2 HD - Megogo', content: '🟢✔️', link: 'https://game-kidz.blogspot.com/2024/01/pingwiny-z-madagaskaru-i-hem.html?url=https://megogo.net/pl/tv/channels/20856917-polsat-online.html' },
+            { title: 'TVP2 HD - Pilot WP', content: '⚫✔️', link: 'https://game-kidz.blogspot.com/2024/01/pingwiny-z-madagaskaru-i-hem.html?url=https://pilot.wp.pl/tv/#tvp-2-hd' },
+            { title: 'TVP2 HD - VOD', content: '⚫✔️', link: 'https://game-kidz.blogspot.com/2024/01/pingwiny-z-madagaskaru-i-hem.html?url=https://vod.tvp.pl/live,1/tvp-2,399698' },
+
+<!-- .............................TVP2............................. -->
+
+            { title: 'TVP2 HD - Megogo', content: '🟢✔️', link: 'https://game-kidz.blogspot.com/2024/01/pingwiny-z-madagaskaru-i-hem.html?url=https://megogo.net/pl/tv/channels/20856917-polsat-online.html' },
+            { title: 'TVP2 HD - Pilot WP', content: '⚫✔️', link: 'https://game-kidz.blogspot.com/2024/01/pingwiny-z-madagaskaru-i-hem.html?url=https://pilot.wp.pl/tv/#tvp-2-hd' },
+            { title: 'TVP2 HD - VOD', content: '⚫✔️', link: 'https://game-kidz.blogspot.com/2024/01/pingwiny-z-madagaskaru-i-hem.html?url=https://vod.tvp.pl/live,1/tvp-2,399698' },
+
+<!-- .............................TVP2............................. -->
+
+            { title: 'POLSAT', content: '🟢 + Chat', link: 'https://game-kidz.blogspot.com/2024/01/pingwiny-z-madagaskaru-i-hem.html?url=https://maxitv-pl.blogspot.com/tvp1' },
+
+        ];
+
+
+
+
+
+
+
+
+
+
+
+        // Function to perform search and display results
+        function performSearch() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const resultsContainer = document.getElementById('search-results');
+
+            // Clear previous results
+            resultsContainer.innerHTML = '';
+
+            // Filter data based on the search term
+            const filteredResults = searchData.filter(item => 
+                item.title.toLowerCase().includes(searchTerm) ||
+                item.content.toLowerCase().includes(searchTerm)
+            );
+
+            // Display results
+            filteredResults.forEach(result => {
+                const resultItem = document.createElement('li');
+                resultItem.className = 'result-item';
+
+                // Create a link element with a click event listener
+                const resultLink = document.createElement('a');
+                resultLink.href = result.link;
+                resultLink.innerHTML = `<strong>${result.title}</strong><p>${result.content}</p>`;
+                resultLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.open(result.link, '_blank', 'width=9999,height=9999');
+                });
+
+                // Append the link to the list item
+                resultItem.appendChild(resultLink);
+
+                // Append the list item to the results container
+                resultsContainer.appendChild(resultItem);
+            });
+        }
+
+        // Attach event listener to the search input
+        document.getElementById('search-input').addEventListener('input', performSearch);
+    </script>
+
+
+</body></html>
